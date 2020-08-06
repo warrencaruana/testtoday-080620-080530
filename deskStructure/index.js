@@ -26,7 +26,7 @@ const hiddenTypes = [
 	"siteSettings"
 ];
 
-const webriqsandbox = S.list()
+const studio = S.list()
 	.title("Content")
 	.items([
 		siteSettings,
@@ -42,7 +42,7 @@ const webriqsandbox = S.list()
 	]);
 
 const locations = {
-	webriqsandbox
+	studio
 };
 let last = "";
 // Send a message to the parent
@@ -66,7 +66,7 @@ export default () => {
 			window.currentStudioLocation = location;
 			const loc =
 				location.pathname.split("/")[1].replace("intent", last) ||
-				"webriqsandbox";
+				"studio";
 			last = loc !== "intent" && loc;
 			console.log("PATH", loc);
 			return locations[loc];
